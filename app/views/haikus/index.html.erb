@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Haikus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Kamigo</th>
+      <th>Nakashichi</th>
+      <th>Shimogo</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @haikus.each do |haiku| %>
+      <tr>
+        <td><%= haiku.user_id %></td>
+        <td><%= haiku.kamigo %></td>
+        <td><%= haiku.nakashichi %></td>
+        <td><%= haiku.shimogo %></td>
+        <td><%= haiku.description %></td>
+        <td><%= link_to 'Show', haiku %></td>
+        <td><%= link_to 'Edit', edit_haiku_path(haiku) %></td>
+        <td><%= link_to 'Destroy', haiku, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Haiku', new_haiku_path %>

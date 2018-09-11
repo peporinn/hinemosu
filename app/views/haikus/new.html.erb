@@ -1,0 +1,15 @@
+<div class="haiku_new">
+  <div class="haiku_new_post cf">
+  <div class="haiku_new_post_left">
+    <h1>本日のお題に挑戦</h1>
+    <div class="haiku_new_post_left_image">
+      <%= image_tag("bg_sakura.jpg") %>
+    </div>
+  </div>
+  <div class="haiku_new_post_right">
+    <%= render 'form', haiku: @haiku %>
+  </div>
+  <div class="menu_buttons">
+    <%= link_to '投稿お題一覧に戻る', haikus_path, class: "button_all" %>
+  </div>
+</div>

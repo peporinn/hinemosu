@@ -1,0 +1,81 @@
+@charset "utf-8";
+html {
+	-webkit-text-size-adjust: none;
+	height: 100%;
+}
+body {
+	text-align: left;
+	font: 14px/1 Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "メイリオ" , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+	height: 100%;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: normal;
+	vertical-align: baseline;
+	font-style: normal;
+}
+img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: top;
+}
+img, input[type="text"], input[type="password"], textarea{
+  max-width:100%;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 13px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ul, ol {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+a {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+	cursor: pointer;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* cf */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* bootstrap用 */
+.row{
+margin-left:0;
+margin-right:0;
+}
+small{
+font-size:1em;
+}

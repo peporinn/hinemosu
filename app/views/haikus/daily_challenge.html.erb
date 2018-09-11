@@ -1,0 +1,61 @@
+<div id="index">
+  <div class="daily_challenge" style="background-image:url(/assets/bg_sakura.jpg)">
+    <p>デイリーチャレンジ</p>
+    <p>桜の木を見上げる女性で一句</p>
+    <p>
+      <%= link_to new_haiku_path, {class: "daily_challenge_try_button"} do %>
+        <%= image_tag("icon_light.svg") %>
+        <span>デイリーチャレンジに挑戦</span>
+      <% end %>
+    </p>
+  </div>
+
+  <div class="index_menu_list cf">
+    <ul class="cf">
+      <li><%= link_to haikus_path do %><%= image_tag("icon_my_haiku.png") %><p>わたしの句</p><% end %></li>
+      <li><a href="javascript:void(0);"><%= image_tag("icon_heart.svg") %><p>お気に入り</p></a></li>
+      <li><a href="javascript:void(0);"><%= image_tag("icon_circle.png") %><p>フレンド</p></a></li>
+      <li><a href="javascript:void(0);"><%= image_tag("icon_circle.png") %><p>サークル</p></a></li>
+    </ul>
+    <div><%= link_to new_haiku_path do %><%= image_tag("icon_pencil.svg") %><p>投稿</p><% end %></div>
+  </div>
+
+  <div class="index_my_profile cf">
+    <div class="index_my_profile_left"  style="background-image:url(/assets/image_my_profile.jpg)">
+      <%= image_tag("image_my_profile.jpg") %>
+    </div>
+    <div class="index_my_profile_right">
+      <div><span>みならい俳人</span><h2>ゆうな</h2></div>
+      <ul class="cf">
+        <li><%= link_to user_path(1) do %><%= image_tag("icon_fukidashi"); %>プロフィール確認</a><% end %></li>
+        <li><%= link_to edit_user_path(1) do %><%= image_tag("icon_scissors"); %>プロフィール編集</a><% end %></li>
+        <li><a href="javascript:void(0);"><%= image_tag("icon_setting"); %>環境設定</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="index_haikus">
+    <div class="index_haikus_in">
+      <ul class="index_haikus_tab cf">
+        <li><a href="javascript:void(0);">全部</a></li>
+        <li><a href="javascript:void(0);">フレンド</a></li>
+        <li><a href="javascript:void(0);">サークル</a></li>
+      </ul>
+      <ul class="index_haikus_list cf">
+        <% @haikus.each_with_index do |haiku, count| %>
+          <li class="cf">
+            <p class="index_haiku_photo"><%= image_tag("bg_sakura") %></p>
+            <p class="index_haiku_main">
+              <span><%= haiku.kamigo %></span><br />
+              <span><%= haiku.nakashichi %></span><br />
+              <span><%= haiku.shimogo %></span><br />
+              <span><%= image_tag("icon_loupe") %><%= link_to "この句の詳細へ >", haiku_path(haiku) %></span>
+            </p>
+            <p class="index_haiku_user"><%= haiku.user.nickname %></p>
+          </li>
+          <% break if count >= 10 %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

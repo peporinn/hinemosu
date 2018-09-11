@@ -1,0 +1,109 @@
+@media screen and (max-width: 414px) {
+  #container{
+    position:relative;
+    width:100vw;
+    height:auto;
+  }
+  #contents:before{
+    content:"";
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    min-height:100vh;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    background-image:image-url("bg_anywhere.jpg");
+    background-size:auto 100%;
+  }
+  
+  #index .daily_challenge{
+    position:relative;
+    height:calc(100vh - (22vh + 50vw + 75px));
+    background-position:center bottom;
+    background-size:100% auto;
+  }
+  #index .daily_challenge:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    width:100%;
+    height:calc(100vh - (22vh + 50vw + 75px));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, transparent), color-stop(.5, rgba(100,100,100,0.5)), to(rgba(100,100,100,0.5))),
+    -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, transparent), color-stop(.5, rgba(100,100,100,0.5)), to(rgba(100,100,100,0.5)));
+    -webkit-background-size: 2px 2px;
+  }
+  #index .daily_challenge p{
+    position:absolute;
+    z-index:2;
+    margin:0 auto;
+  }
+  #index .daily_challenge p{
+    top:calc(8vh + 8vw + 1rem);
+    text-align:center;
+    width:100%;
+    color:#ffffff;
+    font-weight:bold;
+    text-shadow:1px 1px 1px rgba(60,60,60,0.75);
+  }
+  #index .daily_challenge p:first-child{
+    top:8vh;
+    font-size:8vw;
+  }
+  #index .daily_challenge p:last-child{
+    top:calc(10vh + 8vw + 2.5rem);
+    line-height:5vh;
+    text-shadow:none;
+  }
+  #index .daily_challenge p:last-child img{
+    height:5vh;
+  }
+  #index .daily_challenge p:last-child a{
+    display:inline-block;
+    padding:1rem;
+    border:1px solid rgba(255,255,255,0.75);
+    color:#ffffff;
+    background: rgba(255,255,255,0.25);
+  }
+
+  .haiku_new_post_left{
+  float:inherit;
+  width:100%;
+  }
+  .haiku_new_post_left_image{
+  width:60%;
+  margin:0 auto;
+  position:relative;
+  text-align:center;
+  }
+  .haiku_new_post_left_image:before{
+    content:"";
+    box-sizing:border-box;
+    position:absolute;
+    width:102%;
+    height:102%;
+    top:-1%;
+    left:-1%;
+    z-index:10;
+    border:3px solid #9ED4C4;
+  }
+  .haiku_new_post_left_image{
+    border:1px solid green;
+  }
+  .haiku_new_post_left h1{
+  text-align:center;
+  margin-bottom:1rem;
+  font-size:1.5em;
+  }
+  .haiku_new_post_right{
+  float:inherit;
+  width:100%;
+  margin-left:0;
+  margin-top:1rem;
+  margin-bottom:1rem;
+  }
+}

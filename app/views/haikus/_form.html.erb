@@ -1,0 +1,54 @@
+<%= form_with(model: haiku, local: true) do |form| %>
+  <% if haiku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(haiku.errors.count, "error") %> prohibited this haiku from being saved:</h2>
+
+      <ul>
+      <% haiku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :user_id, id: :haiku_user_id, value: 1 %>
+
+  <div class="field">
+    <dl class="cf">
+      <dt><%= form.label :kamigo %>:</dt>
+      <dd><%= form.text_field :kamigo, id: :haiku_kamigo %></dd>
+    </dl>
+  </div>
+
+  <div class="field">
+    <dl class="cf">
+      <dt><%= form.label :nakashichi %>:</dt>
+      <dd><%= form.text_field :nakashichi, id: :haiku_nakashichi %></dd>
+    </dl>
+  </div>
+
+  <div class="field">
+    <dl class="cf">
+      <dt><%= form.label :shimogo %>:</dt>
+      <dd><%= form.text_field :shimogo, id: :haiku_shimogo %></dd>
+    </dl>
+  </div>
+
+  <div class="haiku_new_post_right_description field">
+    <dl class="cf">
+      <dt><%= form.label :description %></dt>
+      <dd><%= form.text_area :description, id: :haiku_description %></dd>
+    </dl>
+  </div>
+
+  <div class="form_submit actions">
+    <ul class="form_submit_settings">
+      <li><label><input type="checkbox"> 自由律として投稿する</label></li>
+      <li><label><input type="checkbox"> 投稿の前に文字数のチェックをする</label></li>
+      <li><label><input type="checkbox"> 投稿の前に季語の有無のチェックをする</label></li>
+      <li><label><input type="checkbox"> 投稿の前にプレゼンテーションを表示する</label></li>
+    </ul>
+    <p class="banners form_submit_banners"><%= image_tag("banner_example.jpg") %></p>
+    <%= form.submit %>
+  </div>
+<% end %>
